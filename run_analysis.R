@@ -39,9 +39,9 @@ merged$Activity <- factor(merged$Activity, levels=activity[,1], labels=activity[
 features <- read.table("features.txt")
 names(merged) <- c("Subject","Activity",as.character(features[,2]))
 
-# STEP 3. Extracts only measurements for mean and standard deviation (ignores MeanFreq and Angle)
+# STEP 3. Extracts only measurements for mean and standard deviation
 
-merged_meansd <- merged[,grepl("Subject|Activity|mean\\(\\)|std",names(merged))]
+merged_meansd <- merged[,grepl("Subject|Activity|mean|std",names(merged))]
 
 # STEP 4. Create tidy dataset with the average of each variable for each activity and each subject.
 
